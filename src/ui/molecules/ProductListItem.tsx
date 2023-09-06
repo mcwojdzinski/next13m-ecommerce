@@ -1,6 +1,6 @@
 import type { ProductItemType } from "../types";
-import { ProductListItemDescription } from "@/ui/atoms/ProductListItemDescription";
-import { ProductCoverImage } from "@/ui/atoms/ProductCoverImage";
+import { ProductItemDescription } from "@/ui/atoms/ProductItemDescription";
+import { ProductItemCoverImage } from "@/ui/atoms/ProductItemCoverImage";
 
 type ProductListItemProps = {
 	product: ProductItemType;
@@ -9,9 +9,9 @@ type ProductListItemProps = {
 export const ProductListItem = ({ product }: ProductListItemProps) => {
 	return (
 		<li>
-			<article>
-				<ProductCoverImage src={product.coverImage.src} alt={product.coverImage.alt} />
-				<ProductListItemDescription product={product} />
+			<article className="hover:cursor-pointer">
+				<ProductItemCoverImage src={product.coverImage.src} alt={product.coverImage.alt} />
+				<ProductItemDescription product={product} />
 			</article>
 		</li>
 	);

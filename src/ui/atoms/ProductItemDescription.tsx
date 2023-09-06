@@ -1,13 +1,13 @@
 import type { ProductItemType } from "../types";
 import { formatPrice } from "@/utils";
 
-type ProductListItemDescription = {
+type ProductItemDescription = {
 	product: ProductItemType;
 };
 
-export const ProductListItemDescription = ({
+export const ProductItemDescription = ({
 	product: { category, name, price },
-}: ProductListItemDescription) => {
+}: ProductItemDescription) => {
 	return (
 		<div className="mt-2 flex justify-between">
 			<div>

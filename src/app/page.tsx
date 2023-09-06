@@ -47,7 +47,7 @@ const products: ProductItemType[] = [
 export default function Home() {
 	return (
 		<section className="mx-auto max-w-md p-12 sm:max-w-2xl md:max-w-3xl lg:max-w-6xl ">
-			<ProductList data-testid="products-list" products={products} />
+			<ProductList products={products} />
 		</section>
 	);
 }

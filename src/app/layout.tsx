@@ -12,7 +12,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body className={inter.className}>
+				<section className="mx-auto max-w-md p-12 sm:max-w-2xl md:max-w-3xl lg:max-w-6xl ">
+					{children}
+				</section>
+				<footer>
+					<p className=""> &copy; 2023</p>
+				</footer>
+			</body>
 		</html>
 	);
 }

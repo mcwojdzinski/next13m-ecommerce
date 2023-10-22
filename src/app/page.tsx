@@ -1,3 +1,4 @@
+import { ProductCounter } from "@/ui/atoms/ProductCounter";
 import { ProductList } from "@/ui/organisms/ProductList";
 import { type ProductItemType } from "@/ui/types";
 
@@ -46,8 +47,9 @@ const products: ProductItemType[] = [
 
 export default function Home() {
 	return (
-		<section className="mx-auto max-w-md p-12 sm:max-w-2xl md:max-w-3xl lg:max-w-6xl ">
+		<>
 			<ProductList products={products} />
-		</section>
+			<ProductCounter />
+		</>
 	);
 }

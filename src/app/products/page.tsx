@@ -1,4 +1,3 @@
-import { ProductCounter } from "@/ui/atoms/ProductCounter";
 import { ProductList } from "@/ui/organisms/ProductList";
 
 import { type ProductItemType } from "@/ui/types";

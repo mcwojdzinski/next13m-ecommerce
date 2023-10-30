@@ -29,8 +29,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 						</div>
 
 						<div className="flex flex-row gap-x-3">
-							<ActiveLink href="/" text={"Home"} />
-							<ActiveLink href="/products" text={"Products"} />
+							<ActiveLink href="/">Home</ActiveLink>
+							<ActiveLink href="/products">Products</ActiveLink>
 						</div>
 
 						<div>

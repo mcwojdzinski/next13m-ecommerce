@@ -8,5 +8,9 @@ const wait = (ms: number) => {
 export const SuggestedProducts = async () => {
 	const products = await getProducts();
 	await wait(5000);
-	return <ProductList products={products.slice(-4)} />;
+	return (
+		<>
+			<ProductList products={products.slice(-4)} />
+		</>
+	);
 };

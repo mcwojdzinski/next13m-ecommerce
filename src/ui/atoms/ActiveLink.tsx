@@ -1,13 +1,27 @@
 "use client";
 
-import Link, { type LinkProps } from "next/link";
+import Link from "next/link";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import { type RouteType } from "next/dist/lib/load-custom-routes";
+import { type Route } from "next";
 
-export const ActiveLink = ({ href, children }: LinkProps<RouteType>) => {
+type ActiveLinkProps<T extends string> = {
+	href: Route<T>;
+	children: React.ReactNode;
+	exact?: boolean;
+};
+
+export const ActiveLink = <T extends string>({
+	href,
+	children,
+	exact = true,
+}: ActiveLinkProps<T>) => {
 	const pathname = usePathname();
-	const isActive = pathname === href;
+
+	if (pathname === href) {
+		exact = false;
+	}
+	const isActive = `${pathname.split("/")[1]}` == `${href.split("/")[1]}` && exact === false;
 	return (
 		<Link
 			href={href}

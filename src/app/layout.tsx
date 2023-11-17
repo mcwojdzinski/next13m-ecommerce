@@ -1,6 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
+
+import { ShoppingCart, Trees } from "lucide-react";
+import { ActiveLink } from "@/ui/atoms/ActiveLink";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +16,42 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body className={inter.className}>
+				<header className="bg-white">
+					<nav
+						className="mx-auto flex max-w-7xl items-center justify-between  p-6 lg:px-8"
+						aria-label="Global"
+					>
+						<div className="flex">
+							<a href="#" className="-m-1.5 p-1.5">
+								<span className="sr-only">Your Company</span>
+								<Trees />
+							</a>
+						</div>
+
+						<div className="flex flex-row gap-x-3">
+							<ActiveLink href="/">Home</ActiveLink>
+							<ActiveLink href="/products/1">Products</ActiveLink>
+							<ActiveLink href="/">Categories</ActiveLink>
+						</div>
+
+						<div>
+							<Link
+								href="#"
+								className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+							>
+								<ShoppingCart />
+							</Link>
+						</div>
+					</nav>
+				</header>
+				<section className="mx-auto max-w-md p-12 sm:max-w-2xl md:max-w-3xl lg:max-w-6xl ">
+					{children}
+				</section>
+				<footer className="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8">
+					<p className="max-auto"> &copy; 2023</p>
+				</footer>
+			</body>
 		</html>
 	);
 }
